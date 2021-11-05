@@ -17,6 +17,9 @@ function checkwinner(){
     &&$("#5").hasClass("X")
     &&$("#7").hasClass("X"))
     {
+        $(".box").removeClass("X")
+        $(".box").removeClass("O")
+        $(".box").html('')
         console.log("P1 Win");
         p1score++;
         $("#p1score").text(p1score)
@@ -35,10 +38,20 @@ function checkwinnerO(){
     &&$("#5").hasClass("O")
     &&$("#7").hasClass("O"))
     {
+        $(".box").removeClass("X")
+        $(".box").removeClass("O")
+        $(".box").html('')
         console.log("P2 Win");
         p2score++;
         $("#p2score").text(p2score)
     }
+ }
+ function checkTie(){
+     if ($(".X").length + $(".O").length === 9){
+    tie++;
+    $("#tie").text(tie)
+     }
+     
  }
 $(".box").click(function(){
     if(turn===1){
