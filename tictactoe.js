@@ -3,7 +3,7 @@ var p2score=0
 var tie=0
 var turn=1
 
-function checkwinner(){
+function checkwinnerX(){
     if ($(".row-1 .box.X").length === 3 ||
      $(".row-2 .box.X").length === 3 ||
      $(".row-3 .box.X").length === 3 ||
@@ -59,7 +59,7 @@ $(".box").click(function(){
         $(this).addClass("X")
         turn=2;
         $("#turn").text(2)
-        checkwinner();
+        checkwinnerX();
     }
     else{
         $(this).text("O")
